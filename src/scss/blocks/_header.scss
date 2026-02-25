@@ -1,0 +1,196 @@
+@use "../utils";
+@use "../fonts/Inter";
+
+.header-m {
+  background-color: #F2F3FA;
+
+  @include utils.from('sm') {
+    display: none;
+  }
+
+  &__logo {
+    min-width: 80px;
+  }
+
+  &__mobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 5px;
+
+    @include utils.from('s') {
+      flex-direction: row;
+    }
+  }
+
+  &__call-button {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: unset;
+    min-width: max-content;
+    font-weight: bold;
+    @include Inter.setFont(16px, 700);
+    color: black;
+
+    @include utils.from('s') {
+      font-size: clamp(12px, 90%, 16px);
+    }
+
+    &::before {
+      content: "";
+      @include utils.hardWidth(20px);
+      aspect-ratio: 1;
+      background-image: url("/src/assets/images/svg/call.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    & > span {
+      margin-bottom: 1px;
+    }
+  }
+}
+
+.header-d {
+  --padding: 20px;
+  --center-space: 10px;
+  display: none;
+
+  @include utils.from('sm') {
+    display: flex !important;
+  }
+
+  &__menu {
+    @include Inter.setFont(14px, 400);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include utils.from('md') {
+      justify-content: flex-start;
+      gap: 40px;
+      font-size: 16px;
+    }
+
+    li a {
+      text-decoration: unset;
+      color: black;
+      transition: .2s all;
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+
+    li:last-child a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      background-color: #b72f31;
+      max-width: max-content;
+      color: white;
+      text-decoration: unset;
+      padding: 5px 15px;
+      border-radius: 20px;
+
+      @include utils.from('md') {
+        padding: 8px 15px;
+      }
+
+      &:before {
+        content: '';
+        background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.40483 0C2.66977 0.0685579 2.85938 0.244237 3.04577 0.432772C3.69386 1.088 4.34837 1.73751 4.99967 2.38953C5.4153 2.80587 5.41673 3.30399 5.0036 3.71819C4.82435 3.8978 4.6426 4.07527 4.46513 4.25666C4.03772 4.69443 3.95273 5.29181 4.24303 5.82992C5.08644 7.39283 6.2912 8.5958 7.85304 9.43992C8.39079 9.73058 8.98817 9.6456 9.42665 9.21889C9.61804 9.0325 9.80408 8.84076 9.9944 8.65294C10.3697 8.28229 10.8835 8.27729 11.2559 8.64758C11.9761 9.36315 12.6974 10.078 13.4059 10.805C13.5301 10.9325 13.593 11.1196 13.684 11.2792V11.5731C13.6094 11.7177 13.5608 11.8859 13.4559 12.003C13.1495 12.3436 12.8238 12.6679 12.4993 12.9917C12.1986 13.2917 11.8294 13.4723 11.422 13.5798C10.7528 13.7559 10.0887 13.6941 9.42772 13.5338C8.50612 13.3102 7.662 12.905 6.85645 12.4154C5.29747 11.467 3.95345 10.2669 2.76797 8.8861C1.86779 7.83738 1.0908 6.70618 0.544478 5.42964C0.209187 4.64623 -0.0246948 3.83603 0.00208567 2.97298C0.0249383 2.23777 0.25882 1.58647 0.801928 1.06693C1.03367 0.84519 1.26612 0.624162 1.49215 0.396707C1.66997 0.217457 1.85958 0.0617735 2.11095 0H2.40483Z' fill='white'/%3e%3c/svg%3e");
+        @include  utils.hardWidth(15px);
+        aspect-ratio: 1;
+      }
+    }
+
+    li:last-child {
+      @include utils.from('md') {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__container {
+    background-color: white;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--center-space);
+  }
+
+  &__logo {
+    max-width: 140px;
+    @include utils.flexCenter();
+    overflow: hidden;
+
+    @include utils.from('lg') {
+      max-width: 200px;
+    }
+  }
+
+  &__top {
+    border-bottom: 1px solid #F2F2F2;
+    padding-bottom: var(--center-space);
+  }
+
+  &__top-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    @include Inter.setFont(16px, 300);
+
+    a {
+      text-decoration: none;
+      color: black;
+      transition: .2s all;
+
+      &:first-child {
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+
+  &__city {
+    display: none;
+
+    @include utils.from('md') {
+      display: flex;
+    }
+  }
+
+  &__work {
+    margin-left: auto;
+    text-align: right;
+
+    @include utils.from('md') {
+      text-align: left;
+      margin-left: unset;
+    }
+  }
+
+  &__phone {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}

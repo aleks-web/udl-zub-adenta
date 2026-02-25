@@ -1,0 +1,39 @@
+@use "sass:map";
+
+$breakpoints: (
+    s: 320px,
+    sm: 576px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px,
+    чxl: 1600px
+);
+
+@mixin hardWidth($size) {
+  min-width: $size;
+  width: $size;
+  max-width: $size;
+}
+
+@mixin resetWidth() {
+  min-width: unset;
+  width: auto;
+  max-width: unset;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin from($breakpoint) {
+  $size: map.get($breakpoints, $breakpoint);
+  @if ($size == 0) {
+    @content;
+  } @else {
+    @media screen and (min-width: $size) {
+      @content;
+    }
+  }
+}

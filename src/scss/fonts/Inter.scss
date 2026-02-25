@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Inter';
+  src: url("/src/assets/fonts/Inter.ttf");
+  font-display: swap;
+}
+
+@mixin setFont($size: 12px, $weight: 400) {
+  font-family: 'Inter', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+}

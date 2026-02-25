@@ -1,0 +1,163 @@
+@use "../fonts/Inter";
+@use "../utils";
+
+.footer {
+  --gap: 40px;
+  @include Inter.setFont(14px, 400);
+  color: #464646;
+
+  @include utils.from('sm') {
+    font-size: 16px;
+  }
+
+  &__logo {
+    @include utils.hardWidth(175px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    @include utils.from('sm') {
+      margin: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding-top: var(--gap);
+    padding-bottom: var(--gap);
+    overflow: hidden;
+
+    @include utils.from('md') {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    @include utils.from('xl') {
+      background-color: #EEEEEE;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @include utils.from('sm') {
+      gap: 10px;
+    }
+
+    @include utils.from('md') {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__menu {
+    display: none;
+    align-items: center;
+    list-style: none;
+
+    a {
+      text-decoration: unset;
+      color: inherit;
+      transition: .2s all;
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+
+  &__line-1 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @include utils.from('sm') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__line-2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--gap);
+    align-items: center;
+
+    @include utils.from('sm') {
+      text-align: left;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  &__line-3 {
+    color: #464646;
+    @include Inter.setFont(17px, 400);
+    text-align: center;
+
+    @include utils.from('md') {
+      font-size: 19px;
+    }
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+
+    @include utils.from('md') {
+      flex-direction: row;
+      gap: 50px;
+    }
+
+    a {
+      color: #464646;
+
+      &:hover {
+        color: #198353;
+      }
+    }
+  }
+}
+
+.icon-string {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: max-content;
+
+  a {
+    text-decoration: unset;
+  }
+
+  &__icon {
+
+  }
+
+  &__text {
+    color: #464646;
+  }
+
+  &__big-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

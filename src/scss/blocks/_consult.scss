@@ -1,0 +1,209 @@
+@use "./../fonts/Inter";
+@use "./../utils";
+
+.consult {
+  @include Inter.setFont(14px, 600);
+
+  &__container {
+    background-color: #F0F0F0;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+
+    @include utils.from('sm') {
+      padding-bottom: 0;
+    }
+
+    @include utils.from('md') {
+      padding-top: 50px;
+    }
+  }
+
+  &__pc {
+    position: absolute;
+    top: -10px;
+    left: -15px;
+
+    @include utils.from('s') {
+      top: 5dvw;
+      left: 3dvw;
+    }
+
+    @include utils.from('sm') {
+      left: unset;
+      right: -60px;
+      top: 110px;
+      background-color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 23px;
+    }
+
+    @include utils.from('lg') {
+      right: -30px;
+      top: 150px;
+    }
+  }
+
+  &__doctor {
+    position: relative;
+
+    img {
+      position: relative;
+      transform: scaleX(-1);
+      right: -12px;
+
+      @include utils.from('s') {
+        right: -32px;
+      }
+
+      @include utils.from('sm') {
+        max-width: 100%;
+        transform: scaleX(1);
+      }
+    }
+
+    @include utils.from('sm') {
+      max-width: 430px;
+    }
+
+    @include utils.from('lg') {
+      max-width: 500px;
+    }
+  }
+
+  &__medals {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include utils.from('sm') {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @include utils.from('md') {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      flex-direction: column;
+      padding-bottom: 36px;
+      padding-right: 36px;
+      gap: 40px;
+    }
+  }
+
+  &__btn {
+    background-color: var(--main-color);
+    color: white;
+    @include Inter.setFont(16px, 400);
+    line-height: 17px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include utils.from('s') {
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    @include utils.from('sm') {
+      font-size: 18px;
+      bottom: 40px;
+      padding: 20px 20px;
+    }
+
+    @include utils.from('md') {
+      font-size: 25px;
+      width: 98%;
+      padding: 30px 20px;
+    }
+
+    @include utils.from('lg') {
+      width: 100%;
+    }
+  }
+}
+
+.medal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+
+  @include utils.from('s') {
+    flex-direction: row;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  @include utils.from('md') {
+    font-size: 18px;
+  }
+
+  @include utils.from('lg') {
+    font-size: 24px;
+  }
+
+  @include utils.from('xl') {
+    font-size: 26px;
+  }
+
+  &__img {
+    max-width: 40px;
+
+    @include utils.from('sm') {
+      max-width: 60px;
+    }
+
+    @include utils.from('lg') {
+      max-width: 80px;
+    }
+
+    @include utils.from('xl') {
+      max-width: 90px;
+    }
+  }
+
+  &__desc {
+    font-weight: 400;
+  }
+}
+
+.pacient-count {
+  &__count {
+    color: var(--main-color);
+    @include Inter.setFont(45px, 700);
+
+    @include utils.from('s') {
+      font-size: 60px;
+    }
+
+    @include utils.from('sm') {
+      font-size: 64px;
+    }
+  }
+
+  &__text {
+    @include Inter.setFont(18px, 600);
+
+    @include utils.from('s') {
+      font-size: 22px;
+    }
+
+    @include utils.from('sm') {
+      font-size: 22px;
+    }
+  }
+}
