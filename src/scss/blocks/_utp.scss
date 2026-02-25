@@ -1,0 +1,17 @@
+@use "../fonts/Inter";
+@use "../utils";
+
+.utp {
+  margin-bottom: 50px;
+
+  &__container {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: #F8F8F8;
+  }
+}
+
+.utp-banner {
+  background: linear-gradient(130.51deg, #2FB77A 19.15%, #5CEDAB 80.85%);
+  border-radius: 15px;
+}

@@ -5,12 +5,20 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding-top: 58px;
+    padding-top: 20px;
     gap: 20px;
     position: relative;
 
     @include utils.from('s') {
       gap: 30px;
+    }
+
+    @include utils.from('sm') {
+      padding-top: 50px;
+    }
+
+    @include utils.from('md') {
+      padding-top: 58px;
     }
   }
 
