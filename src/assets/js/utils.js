@@ -87,7 +87,3 @@ HTMLElement.prototype.setIntersectionObserver = function(callback, options) {
     const observer = new IntersectionObserver((...e) => { callback(this, e) }, options);
     observer.observe(this);
 }
-
-
-
-HTMLElement.prototype.setIntersectionObserver

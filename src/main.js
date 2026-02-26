@@ -1,4 +1,5 @@
 import "./assets/js/quiz.js";
+import "./assets/js/modals.js";
 import "./scss/index.scss";
 import "./assets/js/animations.js";
 import "./assets/js/utils.js";
