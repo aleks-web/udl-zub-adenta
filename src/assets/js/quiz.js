@@ -1,3 +1,5 @@
+import sender from "./sender.js";
+
 const nextBtn = document.querySelector('.quiz__control-button--next');
 const prevBtn = document.querySelector('.quiz__control-button--prev');
 const controls = document.querySelector('.quiz__controls');
