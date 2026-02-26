@@ -1,18 +1,490 @@
 ﻿<!doctype html>
 <html lang="ru">
 
-  <include src="./src/layout-parts/head.html"></include>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adenta</title>
+  </head>
 
   <body>
     <div class="content">
-      <include src="./src/blocks/utp.html"></include>
-      <include src="./src/layout-parts/header.html"></include>
 
-      <include src="./src/blocks/main.html"></include>
-      <include src="./src/blocks/consult.html"></include>
-      <include src="./src/blocks/quiz.html"></include>
+      <header class="header-m">
+        <div class="container">
+          <div class="header-m__mobile">
+            <div class="header-m__logo">
+              <img src="/src/assets/images/svg/logo.svg" alt="Adenta">
+            </div>
+            <a href="tel:+79999999999" class="header-m__call-button">
+              <span>+7 (343) 344-49-88</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-      <include src="./src/layout-parts/footer.html"></include>
+      <header class="header-d" style="display: none;">
+        <div class="container header-d__container">
+
+          <div class="header-d__top">
+            <div class="header-d__logo">
+              <img src="/src/assets/images/svg/logo.svg" alt="Logo Desktop">
+            </div>
+
+            <div class="header-d__top-item header-d__city">
+              <span>г. Тюмень</span>
+              <span>Челюскинцев, д. 29</span>
+            </div>
+
+            <div class="header-d__top-item header-d__work">
+              <span>Каждый день</span>
+              <span>с 09:00 до 21:00</span>
+            </div>
+
+            <div class="header-d__top-item header-d__phone">
+              <a href="tel:+73433444988">+7 (343) 344-49-88</a>
+              <a href="#">Перезвоните мне</a>
+            </div>
+
+          </div>
+
+          <nav class="header-d__bottom">
+            <ul class="header-d__menu">
+              <li><a href="#">All-on-4</a></li>
+              <li><a href="#">Преимущества</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li>
+                <a href="#">
+                  Оставить заявку
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="hero">
+          <div class="hero__container container">
+            <div class="hero__wrapper">
+
+              <div class="hero__first">
+                <h1 class="hero__header">
+                  Протезирование всей челюсти <b>на 4 имплантах</b>
+                  <span class="accent">Решение на всю жизнь</span>
+                </h1>
+
+                <div class="hero__implant-image">
+                  <img src="/src/assets/images/hero.png" alt="Имплант">
+                  <span class="hero__implant-price">120.000₽</span>
+                </div>
+              </div>
+
+
+              <div class="hero__last">
+                <ul class="hero__profit-list">
+                  <li class="hero__profit-item">Комплексная диагностика</li>
+                  <li class="hero__profit-item">Анализ костной ткани</li>
+                  <li class="hero__profit-item">Консультация стоматолога</li>
+                  <li class="hero__profit-item">3D Снимок всей челюсти</li>
+                </ul>
+
+                <ul class="hero__utp">
+                  <div class="hero__utp-item">
+                    <div class="hero__utp-item-img">
+                      <img src="/src/assets/images/utp-1.webp" alt="UTP1">
+                    </div>
+                    <div class="hero__utp-item-title">Собственная зуботехническая лаборатория</div>
+                  </div>
+
+                  <div class="hero__utp-item">
+                    <div class="hero__utp-item-img">
+                      <img src="/src/assets/images/utp-2.webp" alt="UTP2">
+                    </div>
+                    <div class="hero__utp-item-title">Хирургическое отделение полного цикла для операций во сне</div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="consult">
+        <div class="container consult__container">
+
+          <div class="consult__medals">
+            <div class="medal">
+              <img class="medal__img" src="/src/assets/images/medal-1.webp" alt="Medal 1">
+              <div class="medal__content">
+                <div class="medal__title">Лучшая стоматология</div>
+                <div class="medal__desc">в Свердловской обалсти</div>
+              </div>
+            </div>
+
+            <div class="medal">
+              <img class="medal__img" src="/src/assets/images/medal-2.webp" alt="Medal 2">
+              <div class="medal__content">
+                <div class="medal__title">Доктора со средним опытом</div>
+                <div class="medal__desc">работы более 15 лет</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="consult__doctor">
+            <img src="/src/assets/images/doctor.webp" alt="Doctor">
+
+            <div class="pacient-count consult__pc">
+              <div class="pacient-count__count">845</div>
+              <div class="pacient-count__text">довольных</div>
+              <div class="pacient-count__text">пациентов</div>
+            </div>
+
+            <button class="consult__btn">Бесплатная консультация</button>
+          </div>
+
+
+
+
+        </div>
+      </section>
+
+      <section class="quiz" id="quiz">
+        <div class="container container--large">
+          <div class="quiz__wrapper">
+            <h2 class="quiz__title">Стоимость лечения зависит от клинической ситуации</h2>
+            <p class="quiz__subtitle">
+              Узнайте стоимость лечения в 3-х ценовых категориях
+              <span class="quiz__subtitle--accent">и получите в подарок консультацию и 3D-снимок</span>
+            </p>
+            <div class="quiz__app">
+              <ul class="quiz__progress-list">
+                <li class="quiz__progress-item quiz__progress-item--active"></li>
+                <li class="quiz__progress-item"></li>
+                <li class="quiz__progress-item"></li>
+                <li class="quiz__progress-item"></li>
+              </ul>
+              <form class="quiz__questions-form">
+                <ul class="quiz__questions-list">
+                  <li class="quiz__question-item">
+                    <h3 class="quiz__question-title">1. Какую челюсть нужно восстановить?</h3>
+                    <ul class="quiz__answers-list">
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <img src="/src/assets/images/quiz/1-1.webp" alt="Верхняя челюсть" decoding="async" loading="lazy">
+                          <input type="radio" class="quiz__radio" name="question1">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Верхнюю</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <img src="/src/assets/images/quiz/1-2.webp" alt="Нижняя челюсть" decoding="async" loading="lazy">
+                          <input type="radio" class="quiz__radio" name="question1">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Нижнюю</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <img src="/src/assets/images/quiz/1-3.webp" alt="Обе челюсти" decoding="async" loading="lazy">
+                          <input type="radio" class="quiz__radio" name="question1">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Обе</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <img src="/src/assets/images/quiz/1-4.webp" alt="Затрудняюсь ответить" decoding="async" loading="lazy">
+                          <input type="radio" class="quiz__radio" name="question1">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Затрудняюсь ответить</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="quiz__question-item">
+                    <h3 class="quiz__question-title">2. Какая ситуация с корнями ваших зубов?</h3>
+                    <ul class="quiz__answers-list">
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question2">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Удален(ы)</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question2">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Удалены частично</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question2">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Сохранены</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="quiz__question-item">
+                    <h3 class="quiz__question-title">3. Есть ли у вас перечисленные заболевания?</h3>
+                    <ul class="quiz__answers-list">
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question3">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Пародонтит / Пародонтоз</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question3">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Сахарный диабет</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question3">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Дисплазия кости</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question3">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Болезни крови</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question3">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Ничего из перечисленного</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question3">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Затрудняюсь ответить</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="quiz__question-item">
+                    <h3 class="quiz__question-title">4. Куда вам отправить расчёт стоимости по
+                      имплантации зубов?</h3>
+                    <ul class="quiz__answers-list">
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question4">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Telegram</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question4">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">WhatsApp*</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question4">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Max</span>
+                        </label>
+                      </li>
+                      <li class="quiz__answers-item">
+                        <label class="quiz__answers-label">
+                          <input type="radio" class="quiz__radio" name="question4">
+                          <span class="quiz__custom-radio"></span>
+                          <span class="quiz__answer">Бесплатная консультация по телефону</span>
+                        </label>
+                      </li>
+                    </ul>
+                    <span class="quiz__attention">
+                                        * Продукт компании Meta - запрещённой на территории РФ экстремисткой организации
+                                    </span>
+                  </li>
+
+                  <li class="quiz__question-item">
+                    <div class="quiz__final">
+                      <div class="quiz__final-title">
+                        <h3 class="quiz__final-header">
+                          Почти готово! Введите номер, на который отправить расчёт, и закрепите за собой
+                          <span class="quiz__final-header--accent">бесплатный 3D-снимок</span>
+                        </h3>
+                        <div class="quiz__gift-image">
+                          <img src="/src/assets/images/quiz/gift.webp" alt="Подарок" decoding="async" loading="lazy">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz__inputs">
+                      <label class="quiz__input-label">
+                        <input type="tel" placeholder="Введите Ваш номер" data-mask-phone class="quiz__input">
+                      </label>
+                      <button class="quiz__submit" disabled>Получить расчёт</button>
+                      <span class="quiz__attention quiz__attention--center">
+                                            Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
+                                        </span>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+              <div class="quiz__controls">
+                <button class="quiz__control-button quiz__control-button--prev">Назад</button>
+                <button class="quiz__control-button quiz__control-button--next">Далее</button>
+              </div>
+            </div>
+            <div class="quiz__prises">
+              <span class="quiz__prises--title">Вы получаете:</span>
+              <ul class="quiz__prises-list">
+                <li class="quiz__prises-item quiz__prises-item--red">
+                  Расчёт стоимости
+                </li>
+                <li class="quiz__prises-item quiz__prises-item--blue">
+                  План лечения
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="utp">
+        <div class="container utp__container">
+          <div class="utp-banner">
+
+            <div class="utp-banner__top">
+              <div class="utp-banner__header">
+
+                <div class="utp-banner__title">
+                  Имплантация зубов по методике<span>all-on-4</span>
+                </div>
+
+                <div class="utp-banner__desc">
+                  <div>Восстановим зубы <span>за один приём:</span></div>
+                  <div>4 импланта + несъёмный протез</div>
+                </div>
+              </div>
+
+              <div class="utp-banner__image">
+                <img src="/src/assets/images/ch.webp" alt="ch">
+              </div>
+            </div>
+
+            <ul class="utp-banner__utp">
+              <li class="utp-banner__utp-item">
+                <div>
+                  <span>Проведём осмотр</span>
+                  <span>и сделаем 3D-снимок</span>
+                </div>
+              </li>
+              <li class="utp-banner__utp-item">
+                <div>
+                  <span>Посоветуем импланты</span>
+                  <span>и протез под ваш бюджет</span>
+                </div>
+              </li>
+              <li class="utp-banner__utp-item">
+                <div>
+                  <span>Создадим 3D-модель</span>
+                  <span>Ваших будущих зубов</span>
+                </div>
+              </li>
+              <li class="utp-banner__utp-item">
+                <div>
+                  <span>Подберём индивидуальный</span>
+                  <span>метод лечения</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer__container">
+
+          <div class="footer__line-1">
+            <div class="footer__logo">
+              <img src="/src/assets/images/svg/logo.svg" alt="Adenta">
+            </div>
+
+            <ul class="footer__menu">
+              <li><a href="#">Получить подарок</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">О технологии</a></li>
+              <li><a href="#">Наш центр</a></li>
+              <li><a href="#">Наши работы</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+
+            <div class="footer__info">
+              <div class="icon-string">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.1671 9.81679V12.4035C13.1671 12.7875 12.8702 13.1061 12.4871 13.1332C12.1672 13.1558 11.9062 13.1671 11.7041 13.1671C5.24006 13.1671 0 7.92702 0 1.46301C0 1.2609 0.0113017 0.999872 0.0339052 0.679934C0.0609855 0.296903 0.379607 0 0.763588 0H3.35036C3.53813 0 3.69539 0.142219 3.71424 0.329031C3.73116 0.496743 3.7469 0.631391 3.76145 0.732982C3.90942 1.76638 4.21166 2.74999 4.6441 3.65974C4.71352 3.80576 4.66825 3.98055 4.53668 4.07452L2.95788 5.20231C3.91905 7.44752 5.71956 9.24805 7.96477 10.2092L9.09048 8.63314C9.18565 8.50001 9.36253 8.45422 9.51029 8.52437C10.42 8.95647 11.4035 9.25836 12.4367 9.40598C12.5377 9.42046 12.6715 9.43604 12.8381 9.45287C13.0249 9.47174 13.1671 9.62901 13.1671 9.81679Z" fill="#464646"/>
+                </svg>
+                <a class="icon-string__text" href="tel:+73452530150">+7 (3452) 53-01-50</a>
+              </div>
+
+              <div class="icon-string">
+                <svg class="icon-string__icon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.31505 14.6301C3.27506 14.6301 0 11.355 0 7.31505C0 3.27506 3.27506 0 7.31505 0C11.355 0 14.6301 3.27506 14.6301 7.31505C14.6301 11.355 11.355 14.6301 7.31505 14.6301ZM8.04655 7.31505V3.65752H6.58354V8.77806H10.9726V7.31505H8.04655Z" fill="#464646"/>
+                </svg>
+                <span class="icon-string__text">Работаем с 9:00 до 21:00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__line-2">
+            <div class="footer__line-2-text">
+              <p>Сайт не является публичной офертой. Регистрационный номер лицензии: ЛО72-01-002628</p>
+              <p>г. Тюмень, ул. Челюскинцев, д. 29</p>
+            </div>
+            <div class="icon-string">
+              <svg width="12" height="17" viewBox="0 0 12 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99008 9.99008L5.85204 14.1281L1.71403 9.99008C-0.571342 7.70472 -0.571342 3.99938 1.71403 1.71402C3.99938 -0.571342 7.70472 -0.571342 9.99008 1.71402C12.2754 3.99938 12.2754 7.70472 9.99008 9.99008ZM0.731504 14.6301H10.9726V16.0931H0.731504V14.6301Z" fill="#464646"/>
+              </svg>
+
+              <div class="icon-string__big-content">
+                <span>г.Тюмень</span>
+                <strong>ул. Республики д. 14/7</strong>
+                <strong>ул. Челюскинцев д. 29</strong>
+                <strong>ул. Широтная д. 108 к4</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__line-3">
+            ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА
+          </div>
+
+          <ul class="footer__links">
+            <li><a href="politics.pdf">Политика конфиденциальности</a></li>
+            <li><a href="politics.pdf">Условия обслуживания</a></li>
+            <li><a href="politics.pdf">Настройки куки</a></li>
+          </ul>
+
+        </div>
+      </footer>
     </div>
+
+    <script src="https://test1.ud-core.ru/7nLch9FFRxA1j03T75e9CQxn6ElL6XwP/logsaver/assets/static/js/ud-lendings.min.js?1" defer async></script>
+    <script src="https://data.tech-ud72.ru/assets/static/js/ud-lendings.min.js?1" defer async></script>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

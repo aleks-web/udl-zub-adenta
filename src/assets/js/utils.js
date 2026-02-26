@@ -82,3 +82,12 @@ HTMLElement.prototype.countAnimate = function(count, speed = 300, callback = () 
 
     animate.bind(this)(count, speed);
 }
+
+HTMLElement.prototype.setIntersectionObserver = function(callback, options) {
+    const observer = new IntersectionObserver((...e) => { callback(this, e) }, options);
+    observer.observe(this);
+}
+
+
+
+HTMLElement.prototype.setIntersectionObserver

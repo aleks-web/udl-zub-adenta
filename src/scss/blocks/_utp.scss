@@ -3,19 +3,248 @@
 
 .utp {
   margin-bottom: 50px;
+  position: relative;
+
+  @include utils.from('xl') {
+    margin-bottom: 90px;
+  }
 
   &__container {
     padding-bottom: 30px;
-    padding-top: 30px;
-    background-color: #F8F8F8;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    background-color: transparent;
+    position: relative;
+    margin-top: 100px;
+
+    @include utils.from('sm') {
+      margin-top: 70px;
+    }
+
+    @include utils.from('md') {
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-top: 30px;
+      background-color: #F8F8F8;
+      margin-top: 80px;
+    }
   }
 }
 
 .utp-banner {
   background: linear-gradient(130.51deg, #2FB77A 19.15%, #5CEDAB 80.85%);
   border-radius: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 90px;
+  padding-top: 85px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include utils.from('sm') {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    gap: 50px;
+    border-radius: 20px;
+  }
+
+  @include utils.from('md') {
+    gap: 0;
+    padding-bottom: 50px;
+    border-radius: 30px;
+  }
+
+  @include utils.from('lg') {
+    padding-bottom: 60px;
+    border-radius: 40px;
+  }
+
+  @include utils.from('xl') {
+    padding-bottom: 70px;
+    border-radius: 45px;
+  }
+
+  &__title {
+    @include Inter.setFont(24px, 600);
+    color: white;
+
+    @include utils.from('sm') {
+      max-width: 300px;
+      font-size: 27px;
+    }
+
+    @include utils.from('md') {
+      font-size: 32px;
+      max-width: 400px;
+    }
+
+    @include utils.from('lg') {
+      font-size: 38px;
+      max-width: 500px;
+    }
+
+    @include utils.from('xl') {
+      font-size: 50px;
+      max-width: 550px;
+    }
+
+    span {
+      color: black;
+      padding-left: 6px;
+    }
+  }
+
+  &__desc {
+    @include Inter.setFont(15px, 400);
+    color: white;
+
+    @include utils.from('sm') {
+      font-size: 16px;
+    }
+
+    @include utils.from('md') {
+      font-size: 18px;
+    }
+
+    @include utils.from('lg') {
+      font-size: 22px;
+    }
+
+    @include utils.from('xl') {
+      font-size: 24px;
+    }
+
+    span {
+      color: black;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 10px;
+
+    @include utils.from('s') {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__utp {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -80px;
+    width: 100%;
+    z-index: 0;
+
+    @include utils.from('sm') {
+      top: -5dvw;
+      justify-content: flex-end;
+      right: 0;
+    }
+
+    @include utils.from('md') {
+      top: unset;
+      right: unset;
+      max-width: max-content;
+      position: relative;
+    }
+
+    img {
+      max-width: 250px;
+
+      @include utils.from('sm') {
+        min-width: 47dvw;
+      }
+
+      @include utils.from('md') {
+        @include utils.hardWidth(40dvw);
+        min-width: 300px;
+        top: -60px;
+        position: relative;
+      }
+
+      @include utils.from('lg') {
+        @include utils.hardWidth(unset);
+        width: 450px;
+        right: 40px;
+        top: -80px;
+      }
+    }
+  }
 }
 
 .utp-banner__utp {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include utils.from('sm') {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-item {
+    display: flex;
+    color: #191919;
+    @include Inter.setFont(16px, 400);
+    gap: 15px;
+
+    @include utils.from('s') {
+      font-size: 16px;
+    }
+
+    @include utils.from('md') {
+      font-size: 18px;
+    }
+
+    @include utils.from('lg') {
+      font-size: 20px;
+    }
+
+    @include utils.from('xl') {
+      font-size: 24px;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span:first-child {
+      font-weight: 600;
+    }
+
+    &:before {
+      content: "";
+      background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.5567 0C8.30821 0 0 8.30821 0 18.5567C0 28.8051 8.30821 37.1133 18.5567 37.1133C28.8051 37.1133 37.1133 28.8051 37.1133 18.5567C37.1133 8.30821 28.8051 0 18.5567 0ZM10.8406 18.5049C10.5951 18.2762 10.2705 18.1517 9.93512 18.1576C9.59972 18.1635 9.2797 18.2994 9.0425 18.5366C8.8053 18.7738 8.66943 19.0938 8.66351 19.4292C8.65759 19.7646 8.78209 20.0892 9.01078 20.3347L14.1894 25.5133C14.4321 25.7557 14.7612 25.8919 15.1043 25.8919C15.4474 25.8919 15.7764 25.7557 16.0192 25.5133L28.1026 13.4299C28.3313 13.1844 28.4558 12.8598 28.4498 12.5244C28.4439 12.189 28.3081 11.869 28.0709 11.6318C27.8336 11.3946 27.5136 11.2587 27.1782 11.2528C26.8428 11.2469 26.5182 11.3714 26.2728 11.6001L15.1043 22.7686L10.8406 18.5049Z' fill='white'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      @include utils.hardWidth(35px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-position: center;
+    }
+  }
 }
+
