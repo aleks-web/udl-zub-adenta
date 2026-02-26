@@ -5,7 +5,7 @@
 * @param {string} display - Свойство display, которое нужно установить для элемента
 * @param {callback} callback - функция, которая срабатывает после завершения анимации
 * */
-HTMLElement.prototype.fadeIn = function (duration = 300, opacity = 1, display = 'block', callback = () => {}) {
+HTMLElement.prototype.fadeIn = function (duration = 300, opacity = 1, display = 'block', callbackReady = () => {}) {
     this.style.opacity = 0;
     this.style.display = display || 'block';
     let startTime = null;
@@ -20,7 +20,7 @@ HTMLElement.prototype.fadeIn = function (duration = 300, opacity = 1, display = 
         if (progress < opacity) {
             requestAnimationFrame(animation.bind(this));
         } else {
-            callback(this, { duration, opacity, display, callback });
+            callbackReady(this, { duration, opacity, display, callbackReady });
         }
     }
 
@@ -86,4 +86,12 @@ HTMLElement.prototype.countAnimate = function(count, speed = 300, callback = () 
 HTMLElement.prototype.setIntersectionObserver = function(callback, options) {
     const observer = new IntersectionObserver((...e) => { callback(this, e) }, options);
     observer.observe(this);
+}
+
+document.body.disableScroll = () => {
+    document.body.style.overflow = 'hidden';
+}
+
+document.body.enableScroll = () => {
+    document.body.style.overflow = 'auto';
 }

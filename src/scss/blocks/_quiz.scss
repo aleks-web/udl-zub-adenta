@@ -1,9 +1,17 @@
 @use "../fonts/Inter";
+@use "../utils";
 
 .quiz {
   background-color: #fff;
+  margin-bottom: 120px;
 
-  @media screen and (min-width: 1200px) {
+  @include utils.from('sm') {
+    margin-bottom: 80px;
+  }
+
+  @include utils.from('xl') {
+    margin-bottom: 110px;
+    margin-top: 60px;
     background-color: transparent;
   }
 
