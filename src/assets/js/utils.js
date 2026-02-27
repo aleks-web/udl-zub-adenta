@@ -25,6 +25,8 @@ HTMLElement.prototype.fadeIn = function (duration = 300, opacity = 1, display = 
     }
 
     requestAnimationFrame(animation.bind(this));
+
+    return this;
 }
 
 /*
@@ -53,6 +55,8 @@ HTMLElement.prototype.fadeOut = function (duration = 300, callback = () => {}) {
     }
 
     requestAnimationFrame(animation.bind(this));
+
+    return this;
 }
 
 /*

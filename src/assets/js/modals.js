@@ -9,7 +9,10 @@ export default class Modals {
     }
 
     static closeBg() {
-        document.getElementById('modal-bg')?.fadeOut();
+        const bg = document.getElementById('modal-bg');
+        bg?.fadeOut(500, () => {
+            bg.remove();
+        });
     }
 
     static init(modalSelector) {
@@ -18,7 +21,15 @@ export default class Modals {
             e.style.display = 'none';
         });
 
-        this.openModal({ modalElement: document.querySelector('.modal') });
+        this.#setCloseListener();
+    }
+
+    static #setCloseListener() {
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-wrapper')) {
+                Modals.closeAllModal();
+            }
+        });
     }
 
     static #createBg(colorBg = 'black') {
