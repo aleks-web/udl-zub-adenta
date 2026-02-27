@@ -28,7 +28,7 @@ export default function sender(userData) {
         {
             source: 'website',
             domen: window.location.hostname,
-            city: 66,
+            city: 72,
             title: `Птеригоидная имплантация зубов\nЗаявка с сайта ${window.location.hostname}`,
             utm_source: utmSource,
             utm_campaign: utmCampaign,
@@ -48,13 +48,11 @@ export default function sender(userData) {
             headers: { "Content-Type": "application/json;charset=utf-8" },
             body: JSON.stringify(data),
         })
-            .catch((error) => {
-                console.error('Ошибка резервной отправки:', error);
-            });
+        .catch((error) => {
+            console.error('Ошибка резервной отправки:', error);
+        });
     }
 
-
-    fetchLead("form", data, () => { window.location.reload() }, '^\\+7\\d{10}$', errorCallback => (console.log("Ошибка маски")));
+    fetchLead("form", data, () => { /* window.location.reload() */ }, '^\\+7\\d{10}$', errorCallback => (console.log("Ошибка маски")));
     sendToBackup(data);
-
 }

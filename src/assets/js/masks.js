@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         mask: '+{7} (000) 000-00-00',
         prepare: (str, masked) => {
             const ch = String(str);
-
             if (!masked.value && ch === "8") return "7";
-
             return ch;
         }
     };
@@ -16,6 +14,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     window.imasks = [];
     phoneElements.forEach(phoneEl => {
         const mask = IMask(phoneEl, maskOptions);
-        window.imasks.push(mask);
+        window.imasks.push({phoneEl, mask});
     });
 });

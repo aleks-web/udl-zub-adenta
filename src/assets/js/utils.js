@@ -88,6 +88,10 @@ HTMLElement.prototype.setIntersectionObserver = function(callback, options) {
     observer.observe(this);
 }
 
+window.clearPhone = (string) => {
+    return '+' + string.replace(/[^\d]+/g, '');
+}
+
 document.body.disableScroll = () => {
     document.body.style.overflow = 'hidden';
 }

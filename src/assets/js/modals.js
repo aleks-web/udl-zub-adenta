@@ -54,13 +54,13 @@ export default class Modals {
         bg.fadeIn(duration, opacityBg, 'flex');
     }
 
-
-
     static #prepareModal(modal) {
         const bgModal = document.createElement('div');
 
         bgModal.style.display = 'none';
         bgModal.style.position = 'fixed';
+        bgModal.style.justifyContent = 'center';
+        bgModal.style.alignItems = 'center';
         bgModal.style.top = '0';
         bgModal.style.left = '0';
         bgModal.style.width = '100%';
@@ -110,3 +110,18 @@ export default class Modals {
         document.body.enableScroll();
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    Modals.init('.modal');
+
+    window.openModal = async (modalSelector) => {
+        const Modals = (await import('/src/assets/js/modals.js')).default;
+        const modal = document.querySelector(modalSelector);
+        Modals.openModal({ modalElement: modal });
+    }
+
+    window.closeAllModals = async () => {
+        const Modals = (await import('/src/assets/js/modals.js')).default;
+        Modals.closeAllModal();
+    }
+});
