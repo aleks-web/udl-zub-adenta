@@ -29,7 +29,7 @@ export default function sender(userData) {
             source: 'website',
             domen: window.location.hostname,
             city: 72,
-            title: `Птеригоидная имплантация зубов\nЗаявка с сайта ${window.location.hostname}`,
+            title: `Сделай Все на 4 - 120.000₽ \nЗаявка с сайта ${window.location.hostname}`,
             utm_source: utmSource,
             utm_campaign: utmCampaign,
             utm_content: utmContent,
