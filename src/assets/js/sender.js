@@ -53,6 +53,6 @@ export default function sender(userData) {
         });
     }
 
-    fetchLead("form", data, () => { /* window.location.reload() */ }, '^\\+7\\d{10}$', errorCallback => (console.log("Ошибка маски")));
+    fetchLead("form", data, () => { document.dispatchEvent(new CustomEvent('fetchLeadSuccess', { detail: { data } })) }, '^\\+7\\d{10}$', errorCallback => (console.log("Ошибка маски")));
     sendToBackup(data);
 }

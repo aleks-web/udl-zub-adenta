@@ -34,7 +34,9 @@
 
             <div class="header-d__top-item header-d__city">
               <span>г. Тюмень</span>
-              <span>Челюскинцев, д. 29</span>
+              <span>ул. Республики д. 14/7</span>
+              <span>ул. Челюскинцев д. 29</span>
+              <span>ул. Широтная д. 108 к4</span>
             </div>
 
             <div class="header-d__top-item header-d__work">
@@ -44,28 +46,24 @@
 
             <div class="header-d__top-item header-d__phone">
               <a href="tel:+73433444988">+7 (343) 344-49-88</a>
-              <a href="#">Перезвоните мне</a>
+              <a href="#" onclick="((e) => { e.preventDefault(); openModal('.modal-call') })(event)">Перезвоните мне</a>
             </div>
 
           </div>
 
           <nav class="header-d__bottom">
             <ul class="header-d__menu">
-              <li><a href="#">All-on-4</a></li>
-              <li><a href="#">Преимущества</a></li>
-              <li><a href="#">Контакты</a></li>
-              <li>
-                <a href="#" onclick="openModal('.modal-call')">
-                  Оставить заявку
-                </a>
-              </li>
+              <li><a href="#" data-goto="all-on">All-on-4</a></li>
+              <li><a href="#" data-goto="vorteile">Преимущества</a></li>
+              <li><a href="#" data-goto="contacts">Контакты</a></li>
+              <li><a href="#" onclick="((e) => { e.preventDefault(); openModal('.modal-call') })(event)">Оставить заявку</a></li>
             </ul>
           </nav>
 
         </div>
       </header>
 
-      <main class="main">
+      <main class="main" id="all-on" >
         <section class="hero">
           <div class="hero__container container">
             <div class="hero__wrapper">
@@ -363,7 +361,7 @@
         </div>
       </section>
 
-      <section class="utp">
+      <section class="utp" id="vorteile"  >
         <div class="container utp__container">
           <div class="utp-banner">
 
@@ -415,7 +413,7 @@
         </div>
       </section>
 
-      <footer class="footer">
+      <footer class="footer" id="contacts">
         <div class="container footer__container">
 
           <div class="footer__line-1">
@@ -424,12 +422,8 @@
             </div>
 
             <ul class="footer__menu">
-              <li><a href="#">Получить подарок</a></li>
-              <li><a href="#">О нас</a></li>
-              <li><a href="#">О технологии</a></li>
-              <li><a href="#">Наш центр</a></li>
-              <li><a href="#">Наши работы</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li><a href="#" data-goto="all-on">All-on-4</a></li>
+              <li><a href="#" data-goto="vorteile">Преимущества</a></li>
             </ul>
 
             <div class="footer__info">
@@ -437,7 +431,7 @@
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.1671 9.81679V12.4035C13.1671 12.7875 12.8702 13.1061 12.4871 13.1332C12.1672 13.1558 11.9062 13.1671 11.7041 13.1671C5.24006 13.1671 0 7.92702 0 1.46301C0 1.2609 0.0113017 0.999872 0.0339052 0.679934C0.0609855 0.296903 0.379607 0 0.763588 0H3.35036C3.53813 0 3.69539 0.142219 3.71424 0.329031C3.73116 0.496743 3.7469 0.631391 3.76145 0.732982C3.90942 1.76638 4.21166 2.74999 4.6441 3.65974C4.71352 3.80576 4.66825 3.98055 4.53668 4.07452L2.95788 5.20231C3.91905 7.44752 5.71956 9.24805 7.96477 10.2092L9.09048 8.63314C9.18565 8.50001 9.36253 8.45422 9.51029 8.52437C10.42 8.95647 11.4035 9.25836 12.4367 9.40598C12.5377 9.42046 12.6715 9.43604 12.8381 9.45287C13.0249 9.47174 13.1671 9.62901 13.1671 9.81679Z" fill="#464646"/>
                 </svg>
-                <a class="icon-string__text" href="tel:+73452530150">+7 (3452) 53-01-50</a>
+                <a class="icon-string__text" href="tel:+73433444988">+7 (343) 344-49-88</a>
               </div>
 
               <div class="icon-string">
@@ -451,7 +445,7 @@
 
           <div class="footer__line-2">
             <div class="footer__line-2-text">
-              <p>Сайт не является публичной офертой. Регистрационный номер лицензии: ЛО72-01-002628</p>
+              <p>Сайт не является публичной офертой. Регистрационный номер лицензии: Л041-01107-72/00328410</p>
               <p>г. Тюмень, ул. Челюскинцев, д. 29</p>
             </div>
             <div class="icon-string">
@@ -481,7 +475,6 @@
         </div>
       </footer>
     </div>
-
 
 
     <div class="modal modal-call">
@@ -516,12 +509,47 @@
 
       </div>
     </div>
+    <div class="modal modal-success">
+      <div class="modal__wrap">
+
+        <div class="modal__header">
+          <svg class="modal__closeBtn" onclick="closeAllModals()" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.8925 0.3025C12.5025 -0.0874998 11.8725 -0.0874998 11.4825 0.3025L6.5925 5.1825L1.7025 0.2925C1.3125 -0.0975 0.6825 -0.0975 0.2925 0.2925C-0.0975 0.6825 -0.0975 1.3125 0.2925 1.7025L5.1825 6.5925L0.2925 11.4825C-0.0975 11.8725 -0.0975 12.5025 0.2925 12.8925C0.6825 13.2825 1.3125 13.2825 1.7025 12.8925L6.5925 8.0025L11.4825 12.8925C11.8725 13.2825 12.5025 13.2825 12.8925 12.8925C13.2825 12.5025 13.2825 11.8725 12.8925 11.4825L8.0025 6.5925L12.8925 1.7025C13.2725 1.3225 13.2725 0.6825 12.8925 0.3025Z" fill="currentColor" />
+          </svg>
+        </div>
+
+        <div class="modal-success__title">Благодарим за доверие!</div>
+
+        <div class="modal-success__desc">
+          <span><span>Мы свяжемся с вами</span> в ближайшее время — проконсультируем</span>
+          <span>и запишем на бесплатную диагностику</span>
+        </div>
+
+        <div class="modal-success__bottom">
+          <div class="modal-success__bottom-text">
+            Если не хотите ждать звонка, позвоните нам сами
+          </div>
+
+          <div class="modal-success__right">
+            <a href="tel:+73433190523"><span>+7 (343) 319-05-23</span></a>
+            <span class="modal-success__bottom-text">Ежедневно 9:00-20:00</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- calltouch -->
+    <script>
+      (function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","hjj2b30o");
+    </script>
+    <!-- calltouch -->
 
 
 
     <script src="https://test1.ud-core.ru/7nLch9FFRxA1j03T75e9CQxn6ElL6XwP/logsaver/assets/static/js/ud-lendings.min.js?1" defer async></script>
     <script src="https://data.tech-ud72.ru/assets/static/js/ud-lendings.min.js?1" defer async></script>
-
     <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>

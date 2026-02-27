@@ -1,5 +1,10 @@
+import { setMask } from "./masks.js";
+import sender from "./sender.js";
+
 export default class Modals {
     static #modalSelector;
+    static beforeOpenModalGlobalCallback = () => {};
+
     static getOriginalModals() {
         return document.querySelectorAll(Modals.#modalSelector);
     }
@@ -48,11 +53,13 @@ export default class Modals {
         return bg;
     }
 
-    static openModal({ modalElement, duration = 400, opacityBg = 0.4, colorBg = 'black' }) {
+    static openModal({ modalElement, duration = 400, opacityBg = 0.4, colorBg = 'black', beforeOpenCallback = () => {  } }) {
         Modals.openBg(duration, opacityBg, colorBg);
 
         let modal = modalElement.cloneNode(true);
         modal = Modals.#prepareModal(modal);
+        Modals.beforeOpenModalGlobalCallback(modal);
+        beforeOpenCallback(modal);
         document.body.appendChild(modal);
         modal.fadeIn(duration, 1, 'flex');
 
@@ -124,6 +131,25 @@ export default class Modals {
 
 document.addEventListener('DOMContentLoaded', () => {
     Modals.init('.modal');
+
+    Modals.beforeOpenModalGlobalCallback = (modal) => {
+        const phoneEl = modal.querySelector('[data-mask-phone]');
+        if (phoneEl) {
+            setMask(phoneEl);
+        }
+
+        modal.querySelectorAll('form.form').forEach(form => {
+            const phone = form.querySelector('[data-mask-phone]');
+            let phoneValue = null;
+
+            form.onsubmit = async (e) => {
+                e.preventDefault();
+                phoneValue = clearPhone(phone.value);
+                sender({ phone: phoneValue });
+            }
+
+        });
+    }
 
     window.openModal = async (modalSelector) => {
         const Modals = (await import('/src/assets/js/modals.js')).default;

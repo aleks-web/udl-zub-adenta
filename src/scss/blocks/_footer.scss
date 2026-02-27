@@ -59,6 +59,11 @@
     display: none;
     align-items: center;
     list-style: none;
+    gap: 30px;
+
+    @include utils.from('xl') {
+      display: flex;
+    }
 
     a {
       text-decoration: unset;

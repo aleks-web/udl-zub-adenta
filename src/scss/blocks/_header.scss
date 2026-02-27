@@ -177,6 +177,15 @@
     @include utils.from('md') {
       display: flex;
     }
+
+    span:first-child {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    span {
+      line-height: 18px;
+    }
   }
 
   &__work {

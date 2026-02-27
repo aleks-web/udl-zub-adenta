@@ -157,7 +157,7 @@
     }
 
     a {
-      color: #5CC2FF;
+      color: #B72F31;
       font-weight: bold;
       text-decoration: revert;
       transition: .2s all;
@@ -211,6 +211,114 @@
 
     > * {
       width: 100%;
+    }
+  }
+}
+
+.modal-success {
+  &__title {
+    font-size: 20px;
+    color: #2A2A2A;
+
+    @include utils.from('s') {
+      font-size: 30px;
+    }
+
+    @include utils.from('sm') {
+      font-size: 40px;
+    }
+
+    @include utils.from('md') {
+      font-size: 50px;
+    }
+
+    span {
+      color: #2f3fb7;
+    }
+  }
+
+  &__desc {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-weight: 300;
+
+    @include utils.from('sm') {
+      font-size: 18px;
+    }
+
+    @include utils.from('md') {
+      font-size: 22px;
+    }
+
+    > span > span {
+      color: var(--main-color);
+      font-weight: 600;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    @include utils.from('md') {
+      flex-direction: row;
+    }
+
+    @include utils.from('md') {
+      margin-top: 40px;
+    }
+
+    &-text {
+      font-size: 16px;
+      text-align: center;
+
+      @include utils.from('md') {
+        max-width: 280px;
+        text-align: left;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__left {
+    @include Inter.setFont(14px, 300);
+  }
+
+  &__right {
+    @include Inter.setFont(14px, 300);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    > span {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @include utils.from('md') {
+        justify-content: right;
+      }
+    }
+
+    a {
+      text-decoration: unset;
+      color: #2A2A2A;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      margin: 0 auto;
+
+      @include utils.from('md') {
+        font-size: 22px;
+      }
     }
   }
 }
