@@ -105,6 +105,12 @@
       flex-direction: column;
       gap: 5px;
     }
+
+    &-bottom {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
   }
 
   &__line-3 {
