@@ -118,7 +118,7 @@
               <img class="medal__img" src="/src/assets/images/medal-1.webp" alt="Medal 1">
               <div class="medal__content">
                 <div class="medal__title">Лучшая стоматология</div>
-                <div class="medal__desc">в Свердловской обалсти</div>
+                <div class="medal__desc">в Тюменской области</div>
               </div>
             </div>
 
@@ -140,7 +140,7 @@
               <div class="pacient-count__text">пациентов</div>
             </div>
 
-            <button class="consult__btn">Бесплатная консультация</button>
+            <button class="consult__btn" onclick="((e) => { e.preventDefault(); openModal('.modal-call') })(event)">Бесплатная консультация</button>
           </div>
 
 
@@ -424,6 +424,7 @@
             <ul class="footer__menu">
               <li><a href="#" data-goto="all-on">All-on-4</a></li>
               <li><a href="#" data-goto="vorteile">Преимущества</a></li>
+              <li><a href="#" data-goto="contacts">Контакты</a></li>
             </ul>
 
             <div class="footer__info">

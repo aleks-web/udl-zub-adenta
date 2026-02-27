@@ -19,6 +19,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     window.imasks = [];
     phoneElements.forEach(phoneEl => {
         const mask = IMask(phoneEl, maskOptions);
-        window.imasks.push({phoneEl, mask});
+        window.imasks.push({ phoneEl, mask });
     });
 });
